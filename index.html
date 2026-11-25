@@ -5,40 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Baila Mann OT Resources</title>
 <style>
-:root { --ink:#1c2530; --mut:#5b6774; --line:#e3e7ec; --bg:#f6f7f9; --card:#fff; --acc:#2f6f5e; }
+:root { --ink:#22303c; --mut:#5d6b78; --line:#e7e2da; --bg:#faf6f0; --card:#fff; --teal:#0d9488; --coral:#f97316; --purple:#8b5cf6; --green:#16a34a; --blue:#2563eb; }
 * { box-sizing:border-box; }
 body { margin:0; font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); }
-header { background:var(--card); border-bottom:1px solid var(--line); padding:22px 20px 14px; position:sticky; top:0; z-index:5; }
-h1 { font-size:22px; margin:0 0 2px; }
-.sub { color:var(--mut); font-size:14px; margin:0 0 12px; }
-nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
-nav a { font-size:13px; text-decoration:none; color:var(--acc); border:1px solid var(--line); border-radius:999px; padding:4px 12px; background:#fff; }
-#q { width:100%; max-width:420px; padding:9px 12px; font-size:15px; border:1px solid var(--line); border-radius:10px; }
+header { background:linear-gradient(135deg,#0f766e 0%,#14b8a6 48%,#fbbf24 125%); color:#fff; padding:28px 20px 18px; position:sticky; top:0; z-index:5; box-shadow:0 2px 12px rgba(15,118,110,.25); }
+header .wrap { max-width:1100px; margin:0 auto; }
+h1 { font-size:26px; font-weight:800; margin:0 0 4px; letter-spacing:.2px; }
+.sub { color:rgba(255,255,255,.92); font-size:14px; margin:0 0 14px; }
+nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+nav a { font-size:13px; font-weight:600; text-decoration:none; color:#fff; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:6px 14px; transition:background .15s; }
+nav a:hover { background:rgba(255,255,255,.32); }
+#q { width:100%; max-width:460px; padding:10px 16px; font-size:15px; border:none; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+#q:focus { outline:3px solid rgba(255,255,255,.55); }
 main { max-width:1100px; margin:0 auto; padding:8px 20px 60px; }
-h2 { font-size:19px; margin:30px 0 2px; border-bottom:2px solid var(--acc); display:inline-block; padding-bottom:4px; }
+section { border-radius:18px; padding:4px 14px 20px; margin:18px -14px 0; }
+#assessments { background:#f0fdfa; }
+#inservices { background:#fff7ed; }
+#handouts { background:#f5f3ff; }
+#worksheets { background:#f0fdf4; }
+#courses { background:#eff6ff; }
+h2 { font-size:20px; margin:20px 0 2px; padding-bottom:6px; display:inline-block; border-bottom:3px solid; }
+h2 .em { margin-right:8px; }
+#assessments h2 { color:#0f766e; border-color:var(--teal); }
+#inservices h2 { color:#c2410c; border-color:var(--coral); }
+#handouts h2 { color:#6d28d9; border-color:var(--purple); }
+#worksheets h2 { color:#15803d; border-color:var(--green); }
+#courses h2 { color:#1d4ed8; border-color:var(--blue); }
 .intro { color:var(--mut); font-size:13.5px; margin:6px 0 0; }
-h3 { font-size:15px; margin:22px 0 10px; color:#33404d; }
-.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px; }
-.card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; transition:box-shadow .15s; }
-.card:hover { box-shadow:0 3px 14px rgba(20,30,40,.12); }
+h3 { font-size:15px; margin:20px 0 10px; color:#33404d; }
+h3::before { content:"\25CF"; font-size:9px; vertical-align:2px; margin-right:7px; }
+#assessments h3::before { color:var(--teal); }
+#inservices h3::before { color:var(--coral); }
+#handouts h3::before { color:var(--purple); }
+#worksheets h3::before { color:var(--green); }
+#courses h3::before { color:var(--blue); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; }
+.card { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line); border-bottom:3px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; transition:transform .15s, box-shadow .15s, border-color .15s; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(20,30,40,.12); }
+#assessments .card:hover { border-bottom-color:var(--teal); }
+#inservices .card:hover { border-bottom-color:var(--coral); }
+#handouts .card:hover { border-bottom-color:var(--purple); }
+#worksheets .card:hover { border-bottom-color:var(--green); }
+#courses .card:hover { border-bottom-color:var(--blue); }
 .thumb { display:block; height:150px; background:#eef1f4; }
 .thumb img { width:100%; height:100%; object-fit:cover; object-position:top; }
 .info { padding:10px 12px 12px; display:flex; flex-direction:column; gap:4px; }
 .t { font-size:14px; font-weight:600; line-height:1.3; }
 .n { font-size:12.5px; color:var(--mut); line-height:1.35; }
-.m { font-size:11.5px; color:#8a94a0; margin-top:auto; }
-@media print { header, nav, #q { display:none; } .grid { grid-template-columns:1fr 1fr; } }
+.m { font-size:11.5px; color:#97a1ac; margin-top:auto; }
+.foot { text-align:center; color:var(--mut); font-size:12.5px; padding:36px 0 8px; }
+@media print { header, nav, #q { display:none; } section { background:#fff; margin:0; padding:0; } .grid { grid-template-columns:1fr 1fr; } }
 </style>
 </head>
 <body>
 <header>
-  <h1>Baila Mann OT Resources</h1>
+  <div class="wrap">  <h1>Baila Mann OT Resources</h1>
   <p class="sub">99 files · assessments, in-services, parent handouts, worksheets and courses. Click any item to open and print it.</p>
-  <nav><a href="#assessments">Assessments</a><a href="#inservices">In-Services</a><a href="#handouts">Parent Handouts</a><a href="#worksheets">Worksheets and Activities</a><a href="#courses">Courses</a></nav>
-  <input id="q" type="search" placeholder="Filter by name or group…" oninput="filt(this.value)">
+  <nav><a href="#assessments">📋 Assessments</a><a href="#inservices">🎓 In-Services</a><a href="#handouts">💌 Parent Handouts</a><a href="#worksheets">✏️ Worksheets and Activities</a><a href="#courses">🎬 Courses</a></nav>
+  <input id="q" type="search" placeholder="🔍 Filter by name or group…" oninput="filt(this.value)">
+  </div>
 </header>
 <main>
-<section id="assessments"><h2>Assessments</h2><p class="intro">Published tests, blank copies only.</p><h3>Beery VMI</h3><div class="grid"><a class="card" href="files/f001.pdf" data-title="beery vmi manual beery vmi" download="Beery VMI manual.pdf">
+<section id="assessments"><h2><span class="em">📋</span>Assessments</h2><p class="intro">Published tests, blank copies only.</p><h3>Beery VMI</h3><div class="grid"><a class="card" href="files/f001.pdf" data-title="beery vmi manual beery vmi" download="Beery VMI manual.pdf">
   <span class="thumb"><img loading="lazy" src="files/f001t.jpg" alt=""></span>
   <span class="info"><span class="t">Beery VMI manual</span>
   <span class="n">Visual-motor integration. Full manual, scanned.</span>
@@ -94,7 +122,7 @@ h3 { font-size:15px; margin:22px 0 10px; color:#33404d; }
   <span class="thumb"><img loading="lazy" src="files/f014t.jpg" alt=""></span>
   <span class="info"><span class="t">Possible long-term effects of unintegrated infant reflexes</span>
   <span class="n">Move Play Thrive, Brain and Sensory Foundations.</span>
-  <span class="m">PDF · 6 pages · 0.9 MB</span></span></a></div></section><section id="inservices"><h2>In-Services</h2><p class="intro">Your own presentations and the materials from them.</p><h3>Executive function</h3><div class="grid"><a class="card" href="files/f015.pdf" data-title="ef in service executive function" download="EF In Service.pdf">
+  <span class="m">PDF · 6 pages · 0.9 MB</span></span></a></div></section><section id="inservices"><h2><span class="em">🎓</span>In-Services</h2><p class="intro">Your own presentations and the materials from them.</p><h3>Executive function</h3><div class="grid"><a class="card" href="files/f015.pdf" data-title="ef in service executive function" download="EF In Service.pdf">
   <span class="thumb"><img loading="lazy" src="files/f015t.jpg" alt=""></span>
   <span class="info"><span class="t">EF In Service</span>
   <span class="n">Executive function skills for teachers. Aug 2023, 21 slides.</span>
@@ -126,7 +154,7 @@ h3 { font-size:15px; margin:22px 0 10px; color:#33404d; }
   <span class="thumb"><img loading="lazy" src="files/f022t.jpg" alt=""></span>
   <span class="info"><span class="t">Creating a Hands On Classroom</span>
   <span class="n">29 slides.</span>
-  <span class="m">PDF · 29 pages · 0.6 MB</span></span></a></div></section><section id="handouts"><h2>Parent Handouts</h2><p class="intro">Handouts to give to parents.</p><h3>Sensory</h3><div class="grid"><a class="card" href="files/f023.pdf" data-title="wilbarger brushing protocol, parent handout sensory" download="Wilbarger brushing protocol, parent handout.pdf">
+  <span class="m">PDF · 29 pages · 0.6 MB</span></span></a></div></section><section id="handouts"><h2><span class="em">💌</span>Parent Handouts</h2><p class="intro">Handouts to give to parents.</p><h3>Sensory</h3><div class="grid"><a class="card" href="files/f023.pdf" data-title="wilbarger brushing protocol, parent handout sensory" download="Wilbarger brushing protocol, parent handout.pdf">
   <span class="thumb"><img loading="lazy" src="files/f023t.jpg" alt=""></span>
   <span class="info"><span class="t">Wilbarger brushing protocol, parent handout</span>
   
@@ -158,7 +186,7 @@ h3 { font-size:15px; margin:22px 0 10px; color:#33404d; }
   <span class="thumb"><img loading="lazy" src="files/f030t.jpg" alt=""></span>
   <span class="info"><span class="t">Brain break gross motor activities</span>
   <span class="n">10 pages of ten-rep moves.</span>
-  <span class="m">PDF · 10 pages · 1.9 MB</span></span></a></div></section><section id="worksheets"><h2>Worksheets and Activities</h2><p class="intro">By target skill. Age is shown only where the sheet states it.</p><h3>Handwriting and visual-motor</h3><div class="grid"><a class="card" href="files/f031.pdf" data-title="handwriting without tears style gray boxes handwriting and visual-motor" download="Handwriting Without Tears style gray boxes.pdf">
+  <span class="m">PDF · 10 pages · 1.9 MB</span></span></a></div></section><section id="worksheets"><h2><span class="em">✏️</span>Worksheets and Activities</h2><p class="intro">By target skill. Age is shown only where the sheet states it.</p><h3>Handwriting and visual-motor</h3><div class="grid"><a class="card" href="files/f031.pdf" data-title="handwriting without tears style gray boxes handwriting and visual-motor" download="Handwriting Without Tears style gray boxes.pdf">
   <span class="thumb"><img loading="lazy" src="files/f031t.jpg" alt=""></span>
   <span class="info"><span class="t">Handwriting Without Tears style gray boxes</span>
   <span class="n">4 pages: letters with corner dots, plain boxes, corner dots, top-center dots. Print at 100%.</span>
@@ -314,7 +342,7 @@ h3 { font-size:15px; margin:22px 0 10px; color:#33404d; }
   <span class="thumb"><img loading="lazy" src="files/f069t.jpg" alt=""></span>
   <span class="info"><span class="t">Double Bubble, check</span>
   
-  <span class="m">PDF · 1 pages · 0.1 MB</span></span></a></div></section><section id="courses"><h2>Courses</h2><p class="intro">One section per course.</p><h3>Consultative Model for Executive Function (Sensational Brain)</h3><div class="grid"><a class="card" href="files/f070.pdf" data-title="course manual 6 consultative model for executive function (sensational brain)" download="Course manual 6.pdf">
+  <span class="m">PDF · 1 pages · 0.1 MB</span></span></a></div></section><section id="courses"><h2><span class="em">🎬</span>Courses</h2><p class="intro">One section per course.</p><h3>Consultative Model for Executive Function (Sensational Brain)</h3><div class="grid"><a class="card" href="files/f070.pdf" data-title="course manual 6 consultative model for executive function (sensational brain)" download="Course manual 6.pdf">
   <span class="thumb"><img loading="lazy" src="files/f070t.jpg" alt=""></span>
   <span class="info"><span class="t">Course manual 6</span>
   
@@ -435,6 +463,7 @@ h3 { font-size:15px; margin:22px 0 10px; color:#33404d; }
   <span class="info"><span class="t">Certificate: The Pediatric Brain (Summit Professional Education)</span>
   <span class="n">May 2018. Scan is rotated.</span>
   <span class="m">PDF · 1 pages · 0.3 MB</span></span></a></div></section>
+<p class="foot">Baila Mann OT Resources · 99 files · made with ♥ for OTs, teachers and parents</p>
 </main>
 <script>
 function filt(v) {
